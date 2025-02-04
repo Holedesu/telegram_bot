@@ -36,23 +36,34 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Настройте PostgreSQL:
-    
-    4.1 Создайте базу данных и пользователя в PostgreSQL.
-    
-    4.2 Настройте соединение в файле settings.py в разделе DATABASES:
-```commandline
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'database_name',
-        'USER': 'database_user',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-```
+4. Настройте PostgreSQL(Если вы используете SQLite, пропустите этот шаг):
+
+   4.1 Закомментируйте данные строчки:
+   ```commandline
+   DATABASES = {
+       'default': {
+           'ENGINE': 'django.db.backends.sqlite3',
+           'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+       }
+   }
+   ```
+
+   4.2 Создайте базу данных и пользователя в PostgreSQL.
+
+   4.3 Раскоментируйте Настройте соединение в файле settings.py в разделе DATABASES:
+
+   ```commandline
+   DATABASES = {
+       'default': {
+           'ENGINE': 'django.db.backends.postgresql',
+           'NAME': 'database_name',
+           'USER': 'database_user',
+           'PASSWORD': 'password',
+           'HOST': 'localhost',
+           'PORT': '5432',
+       }
+   }
+   ```
 5. Выполните миграции:
 ```commandline
 python manage.py makemigrations
@@ -78,3 +89,21 @@ application = (
 ```commandline
 python main.py
 ```
+
+## Мои данные для теста:
+
+### Telegram token
+```commandline
+7764254536:AAHP_CN3cyh7utv7oY4W1DPWpkMNOSOIwcQ
+```
+
+### Данные от админки
+
+1. Login : admin
+2. Password: qwerty123
+
+### ID моего бота
+```commandline
+@MyFeatureTestingBot
+```
+
