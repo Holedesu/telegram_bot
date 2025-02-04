@@ -97,6 +97,9 @@ python main.py
 7764254536:AAHP_CN3cyh7utv7oY4W1DPWpkMNOSOIwcQ
 ```
 
+### Добавить данные моей бд и админки
+python manage.py loaddata data.json
+
 ### Данные от админки
 
 1. Login : admin
